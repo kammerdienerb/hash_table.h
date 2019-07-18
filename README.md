@@ -1,6 +1,6 @@
 # hash_table.h
 
-_hash_table.h_ is a header-only generic hash_table implementation in C. It utilizes (abuses?) the C preprocessor to be provide a level of generality near C++ templates like the STL’s std::unordered\_map.
+_hash_table.h_ is a header-only generic hash_table implementation in C. It utilizes (abuses?) the C preprocessor to provide a level of generality near C++ templates like the STL’s std::unordered\_map.
 
 ## Using ##
 To use _hash_table.h_, you must first `#include "hash_table.h"` in your source code. For every type that you wish to hold in a hash_table, EXACTLY ONE 'using' statement is required:
@@ -13,7 +13,7 @@ use_hash_table(float, int);
 
 ...
 ```
-If the either the key type or the value type is referenced with anything but a bare identifier (e.g. `char *`, `float[10]`), it must first be wrapped in a typedef:
+If either the key type or the value type is referenced with anything but a bare identifier (e.g. `char *`, `float[10]`), it must first be wrapped in a typedef:
 
 ```C
 /* main.c */
@@ -26,7 +26,7 @@ use_hash_table(str, double);
 ...
 ```
 
-After that, you may use any of the following macro-like functions to create, destroy, and operate on hash_tables and their iterators.
+After that, you may use any of the following macro-like functions to create, destroy, and operate on hash_tables.
 
 `hash_table_make(key_type, value_type, hash)`        - Allocates, initializes, and returns a new hash_table with the hash function `hash`.
 
